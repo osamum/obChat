@@ -100,6 +100,9 @@
     <Content Include="packages.config" />
     <Content Include="css\index.less" />
     <None Include="compilerconfig.json" />
+    <Content Include="compilerconfig.json.bindings">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </Content>
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -126,7 +129,6 @@
       <DependentUpon>DOMTemplate.es5.js</DependentUpon>
     </Content>
     <Content Include="Scripts\DOMTemplate.js" />
-    <Content Include="Scripts\fbAuth.js" />
     <Content Include="Scripts\index.es5.js">
       <DependentUpon>index.js</DependentUpon>
     </Content>

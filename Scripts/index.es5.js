@@ -4,16 +4,16 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var Nicebook = (function () {
-    function Nicebook() {
-        _classCallCheck(this, Nicebook);
+var ObChat = (function () {
+    function ObChat() {
+        _classCallCheck(this, ObChat);
     }
 
     /**
     * 記事のスレッドのクラス
     */
 
-    _createClass(Nicebook, null, [{
+    _createClass(ObChat, null, [{
         key: 'init',
 
         /**
@@ -22,14 +22,15 @@ var Nicebook = (function () {
          */
         value: function init() {
             this.threadArray = [];
-            this.accInfo = { 'name': '', 'id': '' };
+            this.accInfo = { 'name': '', 'id': '', img: '' };
             this.ctrl = {
                 fileUpload: $id('imgfile'),
                 sendButton: $id('sendmessage'),
                 canvas: $id('imgCanvas'),
                 textArea: $id('message'),
                 statusMsg: $id('status'),
-                userImageList: $id('userImgList')
+                userImageList: $id('userImgList'),
+                container: $id('container')
             };
 
             this.DATA_TYPE = {
@@ -54,43 +55,45 @@ var Nicebook = (function () {
         value: function setHandlers() {
             //メッセージ送信時のイベントハンドラー
             this.chat.client.broadcastMessage = function (message) {
-                if (Nicebook.accInfo.id !== '') {
+                if (ObChat.accInfo.id !== '') {
                     var messageInfo = JSON.parse(message);
-                    Nicebook.routingJob(messageInfo);
+                    ObChat.routingJob(messageInfo);
                 }
             };
             //コネクション確率時のイベントハンドラー
             $.connection.hub.start().done(function () {
                 //投稿ボタンクリック時のイベントハンドラー
-                Nicebook.ctrl.sendButton.addEventListener('click', function () {
-                    var content = Nicebook.ctrl.textArea.value;
-                    if (content !== "" || Nicebook.uploadPictureObj.imageData) {
+                ObChat.ctrl.sendButton.addEventListener('click', function () {
+                    var content = ObChat.ctrl.textArea.value;
+                    if (content !== '' || ObChat.uploadPictureObj.imageData) {
                         var threadId = appHelper.uuid().substr(0, 8),
                             newThread = {
                             'threadId': threadId,
-                            'userName': Nicebook.accInfo.name,
-                            'userId': Nicebook.accInfo.id,
+                            'userName': ObChat.accInfo.name,
+                            'userId': ObChat.accInfo.id,
+                            'profImg': ObChat.accInfo.img,
                             'content': content,
-                            'imgData': Nicebook.uploadPictureObj.imageData,
-                            'type': Nicebook.DATA_TYPE.MESSAGE
+                            'imgData': ObChat.uploadPictureObj.imageData,
+                            'type': ObChat.DATA_TYPE.MESSAGE
                         };
 
                         var _jsonString = JSON.stringify(newThread);
-                        Nicebook.post(_jsonString);
+                        ObChat.post(_jsonString);
                     }
-                    Nicebook.uploadPictureObj.clearPcture(null, 0);
-                    Nicebook.uploadPictureObj.imageData = '';
-                    Nicebook.ctrl.textArea.value = '';
+                    ObChat.uploadPictureObj.clearPcture(null, 0);
+                    ObChat.uploadPictureObj.imageData = '';
+                    ObChat.ctrl.textArea.value = '';
                 });
 
                 var loginInfo = {
-                    name: Nicebook.accInfo.name,
-                    id: Nicebook.accInfo.id,
-                    'type': Nicebook.DATA_TYPE.LOGON
+                    name: ObChat.accInfo.name,
+                    id: ObChat.accInfo.id,
+                    img: ObChat.accInfo.img,
+                    'type': ObChat.DATA_TYPE.LOGON
                 };
                 var jsonString = JSON.stringify(loginInfo);
-                Nicebook.post(jsonString);
-                Nicebook.ctrl.textArea.focus();
+                ObChat.post(jsonString);
+                ObChat.ctrl.textArea.focus();
             });
             this.uploadPictureObj = new uploadPicture(this.ctrl.fileUpload, this.ctrl.canvas);
             return this;
@@ -104,9 +107,9 @@ var Nicebook = (function () {
         key: 'post',
         value: function post(jsonString) {
             try {
-                Nicebook.chat.server.send(jsonString);
+                ObChat.chat.server.send(jsonString);
             } catch (exp) {
-                Nicebook.ctrl.statusMsg.innerText = 'メッセージを送信できませんでした。ページをリフレッシュしてみてください。';
+                ObChat.ctrl.statusMsg.innerText = 'メッセージを送信できませんでした。ページをリフレッシュしてみてください。';
             }
         }
 
@@ -117,8 +120,8 @@ var Nicebook = (function () {
         key: 'resetStatudBar',
         value: function resetStatudBar() {
             setTimeout(function () {
-                Nicebook.ctrl.statusMsg.innerText = '';
-                Nicebook.ctrl.statusMsg.className = '.status-notice-normal';
+                ObChat.ctrl.statusMsg.innerText = '';
+                ObChat.ctrl.statusMsg.className = '.status-notice-normal';
             }, 3000);
         }
 
@@ -127,24 +130,28 @@ var Nicebook = (function () {
          * setAccInfo
          * @param {string} accountName ユーザー名
          * @param {string} accountId ユーザー ID
+         * @param {string} profilePic プロファイル画像
          *
          */
     }, {
         key: 'setAccInfo',
-        value: function setAccInfo(accountName, accountId) {
-            Nicebook.accInfo.name = accountName;
-            Nicebook.accInfo.id = accountId;
-            var fbLinks = mkFbLink(accountId);
+        value: function setAccInfo(accountName, accountId, profilePic) {
+            ObChat.accInfo.name = accountName;
+            ObChat.accInfo.id = accountId;
+            ObChat.accInfo.img = profilePic;
+            //let fbLinks = mkSNSLink(accountId);
             var ctrl = $id('profilePic');
-            ctrl.src = fbLinks.imgUrl;
+            ctrl.src = profilePic; //fbLinks.imgUrl;
             ctrl.title = accountName;
-            Nicebook.ctrl.fileUpload.disabled = false;
-            Nicebook.ctrl.sendButton.disabled = false;
-            Nicebook.ctrl.textArea.disabled = false;
-            Nicebook.resetStatudBar();
+            ObChat.ctrl.fileUpload.disabled = false;
+            ObChat.ctrl.sendButton.disabled = false;
+            ObChat.ctrl.textArea.disabled = false;
+            ObChat.resetStatudBar();
             $id('userImgListArea').style.display = 'block';
-
-            Nicebook.setHandlers();
+            $id('inputBox').style.display = 'block';
+            ObChat.ctrl.statusMsg.className = 'status-notice-normal';
+            ObChat.ctrl.statusMsg.innerText = accountName + ' さん、ようこそ。';
+            ObChat.setHandlers();
         }
 
         /**
@@ -154,14 +161,14 @@ var Nicebook = (function () {
     }, {
         key: 'notifyLogoff',
         value: function notifyLogoff() {
-            if (Nicebook.accInfo.id === '') return;
+            if (ObChat.accInfo.id === null || ObChat.accInfo.id === '') return;
             var logoffInfo = {
-                name: Nicebook.accInfo.name,
-                id: Nicebook.accInfo.id,
-                'type': Nicebook.DATA_TYPE.LOGOFF
+                name: ObChat.accInfo.name,
+                id: ObChat.accInfo.id,
+                'type': ObChat.DATA_TYPE.LOGOFF
             };
             var jsonString = JSON.stringify(logoffInfo);
-            Nicebook.post(jsonString);
+            ObChat.post(jsonString);
         }
 
         /**
@@ -172,11 +179,11 @@ var Nicebook = (function () {
     }, {
         key: 'notifyLoginOtherUser',
         value: function notifyLoginOtherUser(accInfo) {
-            var msg = accInfo.name + ' さんが Nicebook にログインしました。';
-            var fbLink = mkFbLink(accInfo.id);
-            Nicebook.ctrl.statusMsg.innerText = msg;
-            Nicebook.ctrl.statusMsg.className = 'status-notice-login';
-            Nicebook.resetStatudBar();
+            var msg = accInfo.name + ' さんが ObChat にログインしました。';
+            //let fbLink = mkSNSLink(accInfo.id);
+            ObChat.ctrl.statusMsg.innerText = msg;
+            ObChat.ctrl.statusMsg.className = 'status-notice-login';
+            ObChat.resetStatudBar();
         }
 
         /**
@@ -186,12 +193,11 @@ var Nicebook = (function () {
         key: 'responseAccountInfo',
         value: function responseAccountInfo() {
             var accInfo = this.accInfo;
-            accInfo.type = Nicebook.DATA_TYPE.RECEVE_USER_ACCOUNT;
+            accInfo.type = ObChat.DATA_TYPE.RECEVE_USER_ACCOUNT;
             var jsonString = JSON.stringify(accInfo);
-            Nicebook.post(jsonString);
+            ObChat.post(jsonString);
         }
 
-        //■　ログインしたユーザーのアイコンを追加する
         /**
          * ログインしたユーザーのアイコンを追加する
          * @param {object} receveAccInfo アカウント情報
@@ -199,16 +205,18 @@ var Nicebook = (function () {
     }, {
         key: 'addUserImage',
         value: function addUserImage(
-        /**@type{{name:string, id:string}}*/
+        /**@type{{name:string, id:string; profImg: string}}*/
         receveAccInfo) {
-            var fbLink = mkFbLink(receveAccInfo.id);
+            //let fbLink = mkSNSLink(receveAccInfo.id),
+            var userPicId = 'img' + receveAccInfo.id;
+            if ($id(userPicId)) return;
             var userImageInfo = {
-                'userId': 'img' + receveAccInfo.id,
+                'userId': userPicId,
                 'userName': receveAccInfo.name,
-                'imgUrl': fbLink.imgUrl,
-                'fbUrl': fbLink.fbUrl
+                'imgUrl': receveAccInfo.img, //fbLink.imgUrl,
+                'fbUrl': '@'
             };
-            DOMTemplate.bindTemplate(Nicebook.ctrl.userImageList, userImageInfo, DOMTemplate.oderBy.ASC);
+            DOMTemplate.bindTemplate(ObChat.ctrl.userImageList, userImageInfo, DOMTemplate.oderBy.ASC);
         }
 
         /**
@@ -235,45 +243,45 @@ var Nicebook = (function () {
         receveAccInfo) {
             var msg = receveAccInfo.name + ' さんが退出しました。';
             var elm = $id('img' + receveAccInfo.id);
-            Nicebook.ctrl.userImageList.removeChild(elm);
-            Nicebook.ctrl.statusMsg.innerText = msg;
+            ObChat.ctrl.userImageList.removeChild(elm);
+            ObChat.ctrl.statusMsg.innerText = msg;
         }
 
         /**
          * メッセージの内容のよって処理を振り分ける
-         * @param {object} messageInfo
+         * @param {object} messageInfo 受信したメッセージ
          */
     }, {
         key: 'routingJob',
         value: function routingJob(messageInfo) {
             //ログオンの通知
-            if (messageInfo.type === Nicebook.DATA_TYPE.LOGON) {
-                if (messageInfo.name !== Nicebook.accInfo.name) {
-                    Nicebook.notifyLoginOtherUser(messageInfo);
+            if (messageInfo.type === ObChat.DATA_TYPE.LOGON) {
+                if (messageInfo.name !== ObChat.accInfo.name) {
+                    ObChat.notifyLoginOtherUser(messageInfo);
                     this.responseAccountInfo();
                     this.resetUserImageList();
                 }
                 this.addUserImage(messageInfo);
                 return;
                 //ログオフの通知
-            } else if (messageInfo.type === Nicebook.DATA_TYPE.LOGOFF) {
+            } else if (messageInfo.type === ObChat.DATA_TYPE.LOGOFF) {
                     this.removeUserImage(messageInfo);
                     return;
-                } else if (messageInfo.type === Nicebook.DATA_TYPE.RECEVE_USER_ACCOUNT) {
+                } else if (messageInfo.type === ObChat.DATA_TYPE.RECEVE_USER_ACCOUNT) {
                     this.addUserImage(messageInfo);
                     return;
                 }
             var threadElem = this.whichThread(messageInfo.threadId);
             if (threadElem) {
-                if (messageInfo.type === Nicebook.DATA_TYPE.MESSAGE) {
+                if (messageInfo.type === ObChat.DATA_TYPE.MESSAGE) {
                     threadElem.appendReply(messageInfo);
-                } else if (messageInfo.type === Nicebook.DATA_TYPE.EVALUATE) {
+                } else if (messageInfo.type === ObChat.DATA_TYPE.EVALUATE) {
                     var evalCount = threadElem[messageInfo.evalType] + 1;
                     threadElem[messageInfo.evalType] = evalCount;
                     $id(messageInfo.threadId + messageInfo.evalType).innerText = evalCount;
                 }
             } else {
-                var contentThread = new ContentThread(messageInfo, $id('container'));
+                var contentThread = new ContentThread(messageInfo, this.ctrl.container);
                 this.threadArray.push(contentThread);
             }
         }
@@ -307,9 +315,9 @@ var Nicebook = (function () {
             var newEvaluate = {
                 'threadId': threadId,
                 'evalType': evalType,
-                'type': Nicebook.DATA_TYPE.EVALUATE
+                'type': ObChat.DATA_TYPE.EVALUATE
             };
-            Nicebook.post(JSON.stringify(newEvaluate));
+            ObChat.post(JSON.stringify(newEvaluate));
         }
 
         /**
@@ -327,7 +335,7 @@ var Nicebook = (function () {
         }
     }]);
 
-    return Nicebook;
+    return ObChat;
 })();
 
 var ContentThread = (function () {
@@ -339,7 +347,7 @@ var ContentThread = (function () {
     */
 
     function ContentThread(
-    /** @type {{userId: string, userName: string, 
+    /** @type {{userId: string, userName: string, profImg:string, 
         content: string, imgData: string, type: string}} */
     messageInfo, parent) {
         _classCallCheck(this, ContentThread);
@@ -357,24 +365,24 @@ var ContentThread = (function () {
             loveId = threadId + EVAL.LOVE,
             fannyId = threadId + EVAL.FANNY,
             sadId = threadId + EVAL.SAD;
-        var fbLinks = mkFbLink(messageInfo.userId);
-        var fbLinksLoginUser = mkFbLink(Nicebook.accInfo.id);
+        //let fbLinks = mkSNSLink(messageInfo.userId);
+        //let fbLinksLoginUser = mkSNSLink(ObChat.accInfo.id);
         messageInfo.replysId = replysId;
         messageInfo.atclId = threadId + '_atcl';
         messageInfo.textId = textId;
-        messageInfo.fbUrl = fbLinks.fbUrl;
-        messageInfo.imgUrl = fbLinks.imgUrl;
+        messageInfo.fbUrl = '@';
+        messageInfo.imgUrl = messageInfo.profImg;
         messageInfo.dateTime = appHelper.getCrrentDatetime();
-        messageInfo.currentUserName = Nicebook.accInfo.name;
-        messageInfo.currentImgUrl = fbLinksLoginUser.imgUrl;
+        messageInfo.currentUserName = ObChat.accInfo.name;
+        messageInfo.currentImgUrl = ObChat.accInfo.img; //fbLinksLoginUser.imgUrl;
         messageInfo.likeId = likeId;
         messageInfo.loveId = loveId;
         messageInfo.fannyId = fannyId;
         messageInfo.sadId = sadId;
-        messageInfo.likeClick = 'javascript:Nicebook.evalContent(\'' + threadId + '\',\'' + EVAL.LIKE + '\')';
-        messageInfo.loveClick = 'javascript:Nicebook.evalContent(\'' + threadId + '\',\'' + EVAL.LOVE + '\')';
-        messageInfo.fannyClick = 'javascript:Nicebook.evalContent(\'' + threadId + '\',\'' + EVAL.FANNY + '\')';
-        messageInfo.sadClick = 'javascript:Nicebook.evalContent(\'' + threadId + '\',\'' + EVAL.SAD + '\')';
+        messageInfo.likeClick = 'javascript:ObChat.evalContent(\'' + threadId + '\',\'' + EVAL.LIKE + '\')';
+        messageInfo.loveClick = 'javascript:ObChat.evalContent(\'' + threadId + '\',\'' + EVAL.LOVE + '\')';
+        messageInfo.fannyClick = 'javascript:ObChat.evalContent(\'' + threadId + '\',\'' + EVAL.FANNY + '\')';
+        messageInfo.sadClick = 'javascript:ObChat.evalContent(\'' + threadId + '\',\'' + EVAL.SAD + '\')';
 
         //データをバインドする
         DOMTemplate.bindTemplate(parent, messageInfo, DOMTemplate.oderBy.DESC);
@@ -388,12 +396,13 @@ var ContentThread = (function () {
                 var newComment = {
                     'threadId': threadId,
                     'commentId': threadId + '_' + currentList.childNodes.length + '_reply',
-                    'userName': Nicebook.accInfo.name,
-                    'userId': Nicebook.accInfo.id,
+                    'userName': ObChat.accInfo.name,
+                    'userId': ObChat.accInfo.id,
+                    'profImg': ObChat.accInfo.img,
                     'content': currentText.value,
-                    'type': Nicebook.DATA_TYPE.MESSAGE
+                    'type': ObChat.DATA_TYPE.MESSAGE
                 };
-                Nicebook.post(JSON.stringify(newComment));
+                ObChat.post(JSON.stringify(newComment));
                 currentText.value = '';
             };
         })(replyTextBox, commentList));
@@ -406,7 +415,9 @@ var ContentThread = (function () {
         this.sad = 0;
     }
 
-    //アプリケーションのエントリーポイント
+    /**
+     * 匿名ログインで使用するためのクラス (Facebook 認証などど組み合わせる際は必要なし)
+     */
 
     /**
     * 記事のスレッドに返信を追加
@@ -421,22 +432,22 @@ var ContentThread = (function () {
             fbUrl: string, imgUrl: string, dateTime: string, userId: string,
             userName: string, content: string, imgData: string, type: string}} */
         messageInfo) {
-            var fbLinks = mkFbLink(messageInfo.userId),
-                commentList = this.__commentList;
-            messageInfo.fbUrl = fbLinks.fbUrl;
-            messageInfo.imgUrl = fbLinks.imgUrl;
+            //let fbLinks = mkSNSLink(messageInfo.userId),
+            var commentList = this.__commentList;
+            messageInfo.fbUrl = '@'; //fbLinks.fbUrl;
+            messageInfo.imgUrl = messageInfo.profImg; //fbLinks.imgUrl;
             messageInfo.dateTime = appHelper.getCrrentDatetime();
             //データをバインドする
             DOMTemplate.bindTemplate(commentList, messageInfo);
-            if (Nicebook.accInfo.name !== messageInfo.userName) {
-                Nicebook.ctrl.statusMsg.innerText = messageInfo.userName + ' さんがあなたの投稿にコメントしました。';
-                Nicebook.ctrl.statusMsg.className = 'status-notice-reply';
-                Nicebook.ctrl.statusMsg.addEventListener('click', (function (threadId) {
+            if (ObChat.accInfo.name !== messageInfo.userName) {
+                ObChat.ctrl.statusMsg.innerText = messageInfo.userName + ' さんがあなたの投稿にコメントしました。';
+                ObChat.ctrl.statusMsg.className = 'status-notice-reply';
+                ObChat.ctrl.statusMsg.addEventListener('click', (function (threadId) {
                     return function f() {
-                        Nicebook.moveTop(threadId);
-                        Nicebook.ctrl.statusMsg.className = 'status-notice-normal';
-                        Nicebook.ctrl.statusMsg.innerText = '';
-                        Nicebook.ctrl.statusMsg.removeEventListener('click', f, false);
+                        ObChat.moveTop(threadId);
+                        ObChat.ctrl.statusMsg.className = 'status-notice-normal';
+                        ObChat.ctrl.statusMsg.innerText = '';
+                        ObChat.ctrl.statusMsg.removeEventListener('click', f, false);
                     };
                 })(this.id), false);
             }
@@ -446,16 +457,78 @@ var ContentThread = (function () {
     return ContentThread;
 })();
 
-window.onload = function () {
-    //FbConnected.callBack = Nicebook.init().setAccInfo;
-    //setFbAsncInit();
+var loginBox = (function () {
+    function loginBox() {
+        _classCallCheck(this, loginBox);
+    }
 
-    //Debug 用ダミーデータ
-    Nicebook.init().setAccInfo('Osamu Monoe', '100002070715086');
+    //アプリケーションのエントリーポイント
+
+    _createClass(loginBox, null, [{
+        key: 'init',
+        value: function init(callBack) {
+            var _this = this;
+
+            var profPicM = [{ imgUrl: this.setPath('icon_124990_48.png'), onclick: 'loginBox.handler(event)' }, { imgUrl: this.setPath('icon_113190_48.png'), onclick: 'loginBox.handler(event)' }, { imgUrl: this.setPath('icon_113260_48.png'), onclick: 'loginBox.handler(event)' }, { imgUrl: this.setPath('icon_113250_48.png'), onclick: 'loginBox.handler(event)' }, { imgUrl: this.setPath('icon_113270_48.png'), onclick: 'loginBox.handler(event)' }, { imgUrl: this.setPath('icon_124540_48.png'), onclick: 'loginBox.handler(event)' }, { imgUrl: this.setPath('icon_124530_48.png'), onclick: 'loginBox.handler(event)' }];
+
+            var profPicW = [{ imgUrl: this.setPath('icon_124720_48.png'), onclick: 'loginBox.handler(event)' }, { imgUrl: this.setPath('icon_124660_48.png'), onclick: 'loginBox.handler(event)' }, { imgUrl: this.setPath('icon_124710_48.png'), onclick: 'loginBox.handler(event)' }, { imgUrl: this.setPath('icon_113210_48.png'), onclick: 'loginBox.handler(event)' }, { imgUrl: this.setPath('icon_135050_48.png'), onclick: 'loginBox.handler(event)' }, { imgUrl: this.setPath('icon_118030_48.png'), onclick: 'loginBox.handler(event)' }, { imgUrl: this.setPath('icon_124800_48.png'), onclick: 'loginBox.handler(event)' }];
+
+            var profPicListM = $id('profPicMan');
+            DOMTemplate.bindTemplate(profPicListM, profPicM);
+            var profPicListW = $id('profPicWoman');
+            DOMTemplate.bindTemplate(profPicListW, profPicW);
+
+            this.ctrl = {};
+            this.ctrl.loginBox = $id('loginUI');
+            this.ctrl.nameBox = $id('nameBox');
+            this.ctrl.loginButton = $id('loginButton');
+            this.ctrl.loginButton.addEventListener('click', function () {
+                if (_this.ctrl.nameBox.value) {
+                    if (_this.prvImg) {
+                        _this.ctrl.loginBox.style.display = 'none';
+                        $id('inputBox').style.display = 'block';
+                        ObChat.init().setAccInfo(_this.ctrl.nameBox.value, '' + appHelper.uuid(), _this.prvImg.src);
+                    } else {
+                        alert('使用するアイコンを選択してください。');
+                    }
+                } else {
+                    _this.ctrl.nameBox.value = 'ここにお名前を入力してくださいましね。';
+                    _this.ctrl.nameBox.className = 'alert_RedFrame';
+                    _this.ctrl.nameBox.addEventListener('click', function () {
+                        _this.ctrl.nameBox.select(0, _this.ctrl.nameBox.value.length);
+                    });
+                }
+            });
+            setTimeout(function () {
+                _this.ctrl.nameBox.focus();
+            }, 1000);
+        }
+    }, {
+        key: 'setPath',
+        value: function setPath(fileName) {
+            return 'http://assets-images.azurewebsites.net/' + fileName;
+        }
+    }, {
+        key: 'handler',
+        value: function handler(event) {
+            if (this.prvImg) {
+                this.prvImg.className = 'prof-nomal_img';
+            }
+            var img = event.target;
+            img.className = 'prof-selected_img';
+            this.prvImg = img;
+        }
+    }]);
+
+    return loginBox;
+})();
+
+window.onload = function () {
+    loginBox.init();
 };
 
 window.onbeforeunload = function (e) {
-    //e.returnValue = "Nicebook を閉じますか？\n表示されているデータは失われ、もう二度と戻ることはありません。";
-    //Nicebook.notifyLogoff();
+    //e.returnValue = "ObChat を閉じますか？\n表示されているデータは失われ、もう二度と戻ることはありません。";
+    ObChat.notifyLogoff();
 };
 

@@ -1,0 +1,94 @@
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\csc.exe
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\csc.exe.config
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\csc.rsp
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\csi.exe
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\csi.rsp
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\Microsoft.CodeAnalysis.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\Microsoft.CSharp.Core.targets
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\Microsoft.VisualBasic.Core.targets
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\System.AppContext.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\System.Collections.Immutable.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\System.Diagnostics.StackTrace.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\System.IO.FileSystem.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\System.IO.FileSystem.Primitives.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\System.Reflection.Metadata.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\vbc.exe
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\vbc.exe.config
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\vbc.rsp
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\VBCSCompiler.exe
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\roslyn\VBCSCompiler.exe.config
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Fakebook.dll.config
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Fakebook.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Fakebook.pdb
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Microsoft.AspNet.SignalR.Core.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Microsoft.Owin.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Microsoft.Owin.Host.SystemWeb.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Microsoft.Owin.Security.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Newtonsoft.Json.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Owin.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Microsoft.AspNet.SignalR.Core.xml
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Microsoft.Owin.xml
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Microsoft.Owin.Host.SystemWeb.xml
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Microsoft.Owin.Security.xml
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\bin\Newtonsoft.Json.xml
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\obj\Debug\Fakebook.dll
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\obj\Debug\Fakebook.pdb
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\csc.exe
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\csc.exe.config
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\csc.rsp
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\csi.exe
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\csi.rsp
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\System.AppContext.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\vbc.exe
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\vbc.exe.config
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\vbc.rsp
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\VBCSCompiler.exe
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Fakebook.dll.config
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Fakebook.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Fakebook.pdb
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Microsoft.Owin.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Microsoft.Owin.Security.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Newtonsoft.Json.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Owin.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Microsoft.Owin.xml
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Microsoft.Owin.Security.xml
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\bin\Newtonsoft.Json.xml
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\obj\Debug\Fakebook.csprojResolveAssemblyReference.cache
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\obj\Debug\Fakebook.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\TL03\Fakebook\Fakebook\obj\Debug\Fakebook.pdb
+d:\mydefaults\documents\visual studio 2017\Projects\Fakebook\Fakebook\obj\Debug\Fakebook.csprojResolveAssemblyReference.cache

@@ -1,0 +1,213 @@
+﻿body {
+  background-color: #dddfe2;
+  margin: 0;
+}
+.line-break_div {
+  clear: both;
+}
+.thread {
+  width: 410px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 5px;
+}
+.like-frame {
+  background-color: whitesmoke;
+  padding: 3px;
+  height: 35px;
+}
+.like_anchor {
+  text-decoration: none;
+  vertical-align: middle;
+  background-color: deepskyblue;
+  border-radius: 50%;
+  padding: 3px;
+}
+.like_anchor:hover {
+  font-size: 30px;
+  text-decoration: none;
+  background-color: deepskyblue;
+  border-radius: 50%;
+}
+.love_anchor {
+  text-decoration: none;
+  vertical-align: middle;
+  background-color: pink;
+  border-radius: 50%;
+  padding: 3px;
+}
+.love_anchor:hover {
+  font-size: 30px;
+  text-decoration: none;
+  background-color: pink;
+  border-radius: 50%;
+}
+.fanny_anchor {
+  text-decoration: none;
+  vertical-align: middle;
+  background-color: orange;
+  border-radius: 50%;
+  padding: 3px;
+}
+.fanny_anchor:hover {
+  font-size: 30px;
+  text-decoration: none;
+  background-color: orange;
+  border-radius: 50%;
+}
+.sad_anchor {
+  text-decoration: none;
+  vertical-align: middle;
+  background-color: lightslategray;
+  border-radius: 50%;
+  padding: 3px;
+}
+.sad_anchor:hover {
+  font-size: 30px;
+  text-decoration: none;
+  background-color: lightslategray;
+  border-radius: 50%;
+}
+.content-UI-frame {
+  background-color: whitesmoke;
+  height: 30px;
+  padding: 2px;
+}
+.replay-post_img {
+  height: 30px;
+  width: 30px;
+  float: left;
+}
+.replay-post_input {
+  margin-left: 5px;
+  width: 350px;
+  height: 22px;
+  border-color: gainsboro;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 15px;
+}
+.reply-user_img {
+  height: 30px;
+  width: 30px;
+}
+.list-user_img {
+  margin-top: 2px;
+  border-radius: 50%;
+  border: 5px solid #365899;
+  padding: 3px;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+}
+#userImgListArea {
+  margin-top: 2px;
+  height: 50px;
+  display: none;
+  overflow-y: hidden;
+}
+#userImgListArea_inner {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 420px;
+  height: 65px;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  vertical-align: top;
+}
+#userImgList {
+  height: 50px;
+  width: 800px;
+  white-space: normal;
+  padding: 0px;
+  margin: 0px;
+}
+.reply-item {
+  font-size: 15px;
+}
+.dateTime_span {
+  font-size: 10px;
+}
+.fb-bar_div {
+  font-family: Tahoma;
+  font-weight: bold;
+  font-size: 32px;
+  text-align: center;
+  color: white;
+  background-color: #365899;
+  height: 40px;
+}
+.content_box {
+  width: 420px;
+  margin: 0 auto;
+}
+#inputBox {
+  padding: 3px;
+  background-color: white;
+  border-radius: 5px;
+}
+#post-bar {
+  background-color: whitesmoke;
+  height: 30px;
+}
+#message {
+  font-size: 20px;
+  width: 350px;
+  height: 150px;
+  border-width: 0px;
+  border-style: None;
+}
+#sendmessage {
+  /*
+    float: right;
+    background-color: @color_theme_main;
+    color: white;
+    border-style: solid;
+    border-width: 1px;
+        */
+  float: right;
+  background-color: #365899;
+  color: #fff;
+  border-radius: 5px;
+  padding: 3px;
+  margin-top: 3px;
+}
+.uploadButton {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.uploadButton input[type=file] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+.status-notice-reply {
+  background-color: yellow;
+  color: blue;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 5px;
+  text-decoration: underline;
+}
+.status-notice-login {
+  background-color: green;
+  color: yellow;
+  padding: 2px;
+}
+.status-not-loginYet {
+  color: #365899;
+  font-weight: bold;
+  font-size: 25px;
+  padding: 2px;
+  text-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+.status-notice-normal {
+  color: black;
+}

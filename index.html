@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>OblivionChat</title>
+    <meta name="viewport" content="width=450px">
+    <link href="css/index.css" rel="stylesheet" />
+</head>
+<body >
+    <!--Template definition-->
+    <div style="display:none">
+        <!-- Content UI-->
+        <div id="template_thread" data-app-option="{id:'threadId'}">
+            <br />
+            <div class="thread">
+                <div>
+                    <div class="fl">
+                        <img data-app-option="{src:'imgUrl'}">
+                    </div><div style="float:left;margin-left:4px;">
+                        <a target="_blank" data-app-option="{href:'fbUrl'}">
+                            <span data-app-option="{innerText:'userName'}"></span>
+                        </a><br />
+                        <span data-app-option="{innerText:'dateTime'}"></span>
+                    </div>
+                </div>
+               <div class="line-break_div"></div>
+                <div data-app-option="{id:'atclId',innerText:'content'}" style="margin:2px;"></div>
+                <img data-app-option="{src:'imgData'}">
+                <div class="like-frame">
+                    <a title="いいね!" class="like_anchor" data-app-option="{href:'likeClick'}">👍</a>
+                    <span data-app-option="{id:'likeId'}">0</span>
+                    <a title="超いいね" class="love_anchor" data-app-option="{href:'loveClick'}">💖</a>
+                    <span data-app-option="{id:'loveId'}">0</span>
+                    <a title="ウケるね" class="fanny_anchor" data-app-option="{href:'fannyClick'}">😆</a>
+                    <span data-app-option="{id:'fannyId'}">0</span>
+                    <a title="悲しいね" class="sad_anchor" data-app-option="{href:'sadClick'}">😢</a>
+                    <span data-app-option="{id:'sadId'}">0</span>
+                </div>
+                <div data-app-option="{id:'replysId'}" data-template="template_reply"></div>
+                <div class="content-UI-frame" style="white-space: nowrap;">
+                    <div style="float:left;">
+                        <img class="replay-post_img" data-app-option="{src:'currentImgUrl',alt:'currentUserName'}" />
+                    </div>
+                    <div class="fl">
+                        <input class="replay-post_input" type="text" id="_text" value="" data-app-option="{id:'textId'}" />
+                    </div>
+                    <div class="line-break_div"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Comment UI -->
+        <div id="template_reply" class="reply-item" data-app-option="{id:'commentId'}">
+            <a target="_blank" data-app-option="{href:'fbUrl'}">
+                <img class="reply-user_img" data-app-option="{src:'imgUrl'}" align="left">
+                <span data-app-option="{innerText:'userName'}" ></span>
+            </a><br />
+            <span class="dateTime_span" data-app-option="{innerText:'dateTime'}"></span>
+            <br />
+            <span data-app-option="{innerText:'content'}" ></span>
+        </div>
+
+        <!--■ User image .list-user-->
+        <a id="template_userImg" target="_blank" data-app-option="{id:'userId', href:'fbUrl', title:'userName'}">
+            <img src="#" class="list-user_img" data-app-option="{src:'imgUrl', title:'userName'}" />
+        </a>
+
+    </div>
+
+    <table style="display:none;"><tr>
+            <td id="template_profImages">
+                <img src="#" class="prof-nomal_img" data-app-option="{src:'imgUrl', onclick:'onclick'}" />
+            </td>
+    </tr></table>
+    
+    <!--Template definition End-->
+    
+    <div class="fb-bar_div"><span id="appTitle">OblivionChat</span></div>
+    <div style="width:100%;">
+        <br />
+        <div class="content_box">
+            <!-- Login UI-->
+            <div id="loginUI" class="status-not-loginYet" style="width:100%;height:300px;">
+                使用するユーザー名を入力し、<br />アイコンを選択して [入室] ボタンをクリックしてください。
+                <div style="padding-top:10px;">
+                    <div class="fl">名前:</div>
+                    <div style="padding-left:10px;">
+                        &nbsp;<input id="nameBox" type="text" name="name" value="" tabindex="0" required />
+                    </div>
+                    <div class="line-break_div"></div>
+                    <div style="margin-top:20px;">アイコン:</div>
+                    <div>
+                        <table cellpadding="5" >
+                            <tr id="profPicMan" data-template="template_profImages"></tr>
+                            <tr id="profPicWoman" data-template="template_profImages"></tr>
+                        </table>
+                    </div>
+                    <div style="text-align:right; font-size:10px;">
+                        <a href="http://icooon-mono.com/" target="_blank" title="アイコン素材ダウンロードサイト「icooon-mono」 | 商用利用可能なアイコン素材が無料(フリー)ダウンロードできるサイト | 6000個以上のアイコン素材を無料でダウンロードできるサイト ICOOON MONO">ICOOON MONO</a>&nbsp;さんのアイコンを使用しています。
+                    </div>
+                    <div style="width:200px; margin:0 auto;margin-top:20px;">
+                        <button id="loginButton" >入室</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--■ userImg リスト Area, Area_inner, userImgList[data-template="template_userImg"]-->
+            <div id="userImgListArea">
+                <div id="userImgListArea_inner">
+                    <div id="userImgList" data-template="template_userImg"></div>
+                </div>
+            </div>
+           
+            <!--ステータスを表示するバー-->
+            <div id="status" class="status-not-loginYet"></div>
+            <!-- 記事作成フォーム -->
+            <div id="inputBox" style="display:none;">
+                <div id="post-bar">
+                    <img id="penPic" src="images/pen.png" align="left" />
+                投稿を作成</div>
+                <div class="fl">
+                    <img id="profilePic" data-app-option="{src:'imgUrl',title:'userName'}"/>
+                </div>
+                <div style="float:left;margin-left:2px;">
+                    <textarea id="message" disabled></textarea>
+                </div>
+                <div id="upPicCanvas">
+                    <canvas id="imgCanvas" width="400" height="0"></canvas>
+                </div>
+                <div class="line-break_div"></div>
+                <div class="content-UI-frame">
+                    <div class="uploadButton">
+                        <div id="imgAttachButton" style="font-size:25px;">🖼</div>
+                        <input id="imgfile" type="file" title="クリックして画像を追加" accept="image/jpeg,image/png" disabled>
+                    </div>
+                        <input id="sendmessage" type="button" value="投稿する" disabled />
+                    </div>
+            </div>
+            <div id="container" data-template="template_thread"></div>
+        </div>
+    </div>
+    <!--Script references. -->
+    <!--Reference the jQuery library. -->
+    <script src="Scripts/lib/jquery.min.js"></script>
+
+    <!--Reference the SignalR library. -->
+    <script src="Scripts/lib/jquery.signalR-2.2.1.min.js"></script>
+    <!--Reference the autogenerated SignalR hub script. -->
+    <script src="signalr/hubs"></script>
+
+    <script src="Scripts/DOMTemplate.js"></script>
+    <script src="Scripts/appHelper.js"></script>
+    <script src="Scripts/index.js"></script>
+   
+</body>
+</html>

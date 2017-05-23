@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Nicebook</title>
+    <meta name="viewport" content="width=450px">
+    <link href="css/index.css" rel="stylesheet" />
+</head>
+<body >
+    <!--Template definition-->
+    <div style="display:none">
+        <!-- Content UI-->
+        <div id="template_thread" data-app-option="{id:'threadId'}">
+            <br />
+            <div class="thread">
+                <div>
+                    <div style="float:left;">
+                        <img data-app-option="{src:'imgUrl'}">
+                    </div><div style="float:left;margin-left:4px;">
+                        <a target="_blank" data-app-option="{href:'fbUrl'}">
+                            <span data-app-option="{innerText:'userName'}"></span>
+                        </a><br />
+                        <span data-app-option="{innerText:'dateTime'}"></span>
+                    </div>
+                </div>
+               <div class="line-break_div"></div>
+                <div data-app-option="{id:'atclId',innerText:'content'}" style="margin:2px;"></div>
+                <img data-app-option="{src:'imgData'}">
+                <div class="like-frame">
+                    <a title="いいね!" class="like_anchor" data-app-option="{href:'likeClick'}">👍</a>
+                    <span data-app-option="{id:'likeId'}">0</span>
+                    <a title="超いいね" class="love_anchor" data-app-option="{href:'loveClick'}">💖</a>
+                    <span data-app-option="{id:'loveId'}">0</span>
+                    <a title="ウケるね" class="fanny_anchor" data-app-option="{href:'fannyClick'}">😆</a>
+                    <span data-app-option="{id:'fannyId'}">0</span>
+                    <a title="悲しいね" class="sad_anchor" data-app-option="{href:'sadClick'}">😢</a>
+                    <span data-app-option="{id:'sadId'}">0</span>
+                </div>
+                <div data-app-option="{id:'replysId'}" data-template="template_reply"></div>
+                <div class="content-UI-frame" style="white-space: nowrap;">
+                    <div style="float:left;">
+                        <img class="replay-post_img" data-app-option="{src:'currentImgUrl',alt:'currentUserName'}" />
+                    </div>
+                    <div style="float:left;">
+                        <input class="replay-post_input" type="text" id="_text" value="" data-app-option="{id:'textId'}" />
+                    </div>
+                    <div class="line-break_div"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Comment UI -->
+        <div id="template_reply" class="reply-item" data-app-option="{id:'commentId'}">
+            <a target="_blank" data-app-option="{href:'fbUrl'}">
+                <img class="reply-user_img" data-app-option="{src:'imgUrl'}" align="left">
+                <span data-app-option="{innerText:'userName'}" ></span>
+            </a><br />
+            <span class="dateTime_span" data-app-option="{innerText:'dateTime'}"></span>
+            <br />
+            <span data-app-option="{innerText:'content'}" ></span>
+        </div>
+
+        <!--■ User image .list-user-->
+        <a id="template_userImg" target="_blank" data-app-option="{id:'userId', href:'fbUrl', title:'userName'}">
+            <img src="#" class="list-user_img" data-app-option="{src:'imgUrl', title:'userName'}" />
+        </a>
+
+    </div>
+    <!--Template definition End-->
+    
+    <div class="fb-bar_div"><span id="appTitle">nicebook</span></div>
+    <div style="width:100%;">
+        <br />
+        <div class="content_box">
+            <!-- Facebook Login-->
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+            </fb:login-button>
+           
+            <!--■ userImg リスト Area, Area_inner, userImgList[data-template="template_userImg"]-->
+            <div id="userImgListArea">
+                <div id="userImgListArea_inner">
+                    <div id="userImgList" data-template="template_userImg"></div>
+                </div>
+            </div>
+           
+            <!--ステータスを表示するバー-->
+            <div id="status" class="status-not-loginYet"></div>
+            <!-- 記事作成フォーム -->
+            <div id="inputBox" style="display:none;">
+                <div id="post-bar">
+                    <img src="images/pen.png" style="width:15px;height:15px;padding:3px;" align="left" />
+                投稿を作成</div>
+                <div style="float:left;">
+                    <img id="profilePic" data-app-option="{src:'imgUrl',title:'userName'}"/>
+                </div>
+                <div style="float:left;margin-left:2px;">
+                    <textarea id="message" disabled></textarea>
+                </div>
+                <div style="width:400px;margin:0 auto;">
+                    <canvas id="imgCanvas" width="400" height="0"></canvas>
+                </div>
+                <div class="line-break_div"></div>
+                <div class="content-UI-frame">
+                    <div class="uploadButton">
+                        <div id="imgAttachButton" style="font-size:25px;">🖼</div>
+                        <input id="imgfile" type="file" title="クリックして画像を追加" accept="image/jpeg,image/png" disabled>
+                    </div>
+                        <input id="sendmessage" type="button" value="投稿する" disabled />
+                    </div>
+            </div>
+            <div id="container" data-template="template_thread"></div>
+        </div>
+    </div>
+    <!--Script references. -->
+    <!--Reference the jQuery library. -->
+    <!--<script src="Scripts/lib/jquery-1.6.4.min.js"></script>-->
+    <script src="Scripts/lib/jquery.min.js"></script>
+
+    <!--Reference the SignalR library. -->
+    <script src="Scripts/lib/jquery.signalR-2.2.1.min.js"></script>
+
+    <script src="Scripts/fbAuth.js"></script>
+    <!--Reference the autogenerated SignalR hub script. -->
+    <script src="signalr/hubs"></script>
+
+    <script src="Scripts/DOMTemplate.js"></script>
+    <script src="Scripts/appHelper.js"></script>
+    <script src="Scripts/index.js"></script>
+   
+</body>
+</html>

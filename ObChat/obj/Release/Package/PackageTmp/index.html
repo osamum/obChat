@@ -43,7 +43,14 @@
                     <div class="fl">
                         <input class="replay-post_input" type="text" id="_text" value="" data-app-option="{id:'textId'}" />
                     </div>
-                    <div class="line-break_div"></div>
+                    <div style="float:left;">
+                        <div class="uploadButton">
+                            <div style="font-size:18px;">🖼</div>
+                            <input type="file" title="クリックして画像を追加" data-app-option="{id:'reFileId'}">
+                        </div></div><div class="line-break_div"></div>
+                </div>
+                <div style="width:300px;margin: 0 auto;">
+                <canvas width="300" style="width:300px;display:none;" data-app-option="{id:'reCnvsId'}" height="0"></canvas>
                 </div>
             </div>
         </div>
@@ -56,6 +63,9 @@
             <span class="dateTime_span" data-app-option="{innerText:'dateTime'}"></span>
             <br />
             <span data-app-option="{innerText:'content'}" ></span>
+            <div style="width:300px;margin:0 auto;">
+                <img data-app-option="{src:'imgData'}">
+            </div>
         </div>
 
         <!--■ User image .list-user-->
@@ -99,12 +109,6 @@
                     <div style="width:200px; margin:0 auto;margin-top:20px;">
                         <button id="loginButton" >入室</button>
                     </div>
-                    <!--デモサイト用-->
-                    <div style="font-size:12px;font-weight:normal">
-                        <p>このサイトは <a href="https://github.com/osamum/obChat" target="_blank">github.com/osamum/obChat</a>で公開されているアプリのデモです。</p>
-                        <p>新機能、更新については <a href="https://twitter.com/osamum_MS" target="_blank">@osamum_MS</a>をチェックしてください。</p>
-                    </div>
-                    
                 </div>
             </div>
 
@@ -155,6 +159,7 @@
     <!--<script src="Scripts/DOMTemplate.js"></script>
     <script src="Scripts/appHelper.js"></script>
     <script src="Scripts/index.js"></script>-->
+
     <script src="Scripts/DOMTemplate.es5.js"></script>
     <script src="Scripts/appHelper.es5.js"></script>
     <script src="Scripts/index.es5.js"></script>

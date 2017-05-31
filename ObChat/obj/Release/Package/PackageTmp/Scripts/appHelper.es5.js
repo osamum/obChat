@@ -48,9 +48,10 @@ var uploadPicture = (function () {
      * uploadPicture クラスのコンストラクタ
      * @param {HTMLElement} fileCtrl input type='file' のエレメント
      * @param {HTMLElement} canvas canvas
+     * @param {number} picSize 画像のサイズ
      */
 
-    function uploadPicture(fileCtrl, canvas) {
+    function uploadPicture(fileCtrl, canvas, picSize) {
         var _this = this;
 
         _classCallCheck(this, uploadPicture);
@@ -72,9 +73,10 @@ var uploadPicture = (function () {
             _this.fr.readAsDataURL(file);
             _this.fr.onload = function (evt) {
                 image.onload = function () {
-                    if (_this.image.width > 400) {
-                        var dstWidth = 400;
-                        var dstHeight = 400 / image.width * image.height;
+                    canvas.style.display = 'block';
+                    if (_this.image.width > picSize) {
+                        var dstWidth = picSize;
+                        var dstHeight = picSize / image.width * image.height;
                         canvas.width = dstWidth;
                         canvas.height = dstHeight;
                         ctx.drawImage(image, 0, 0, image.width, image.height, 0, 0, dstWidth, dstHeight);
@@ -93,10 +95,10 @@ var uploadPicture = (function () {
     }
 
     /**
-     * uploadPicture クラスが使用した Canvas の指定範囲をクリアする
-     * @param {number} afterWidth 消去する範囲の幅
-     * @param {number} afterHeight 消去する範囲の高さ
-     */
+    * uploadPicture クラスが使用した Canvas の指定範囲をクリアする
+    * @param {number} afterWidth 消去する範囲の幅
+    * @param {number} afterHeight 消去する範囲の高さ
+    */
 
     _createClass(uploadPicture, [{
         key: 'clearPcture',

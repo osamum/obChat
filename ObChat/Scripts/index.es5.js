@@ -95,7 +95,7 @@ var ObChat = (function () {
                 ObChat.post(jsonString);
                 ObChat.ctrl.textArea.focus();
             });
-            this.uploadPictureObj = new uploadPicture(this.ctrl.fileUpload, this.ctrl.canvas);
+            this.uploadPictureObj = new uploadPicture(this.ctrl.fileUpload, this.ctrl.canvas, 400);
             return this;
         }
 
@@ -364,7 +364,9 @@ var ContentThread = (function () {
             likeId = threadId + EVAL.LIKE,
             loveId = threadId + EVAL.LOVE,
             fannyId = threadId + EVAL.FANNY,
-            sadId = threadId + EVAL.SAD;
+            sadId = threadId + EVAL.SAD,
+            reFileId = threadId + '_reFile',
+            reCanvasId = threadId + '_reCnvs';
         //let fbLinks = mkSNSLink(messageInfo.userId);
         //let fbLinksLoginUser = mkSNSLink(ObChat.accInfo.id);
         messageInfo.replysId = replysId;
@@ -379,6 +381,10 @@ var ContentThread = (function () {
         messageInfo.loveId = loveId;
         messageInfo.fannyId = fannyId;
         messageInfo.sadId = sadId;
+
+        messageInfo.reFileId = reFileId;
+        messageInfo.reCnvsId = reCanvasId;
+
         messageInfo.likeClick = 'javascript:ObChat.evalContent(\'' + threadId + '\',\'' + EVAL.LIKE + '\')';
         messageInfo.loveClick = 'javascript:ObChat.evalContent(\'' + threadId + '\',\'' + EVAL.LOVE + '\')';
         messageInfo.fannyClick = 'javascript:ObChat.evalContent(\'' + threadId + '\',\'' + EVAL.FANNY + '\')';
@@ -388,9 +394,10 @@ var ContentThread = (function () {
         DOMTemplate.bindTemplate(parent, messageInfo, DOMTemplate.oderBy.DESC);
 
         var replyTextBox = $id(textId),
-            commentList = $id(replysId);
+            commentList = $id(replysId),
+            uploadPictureObj = new uploadPicture($id(reFileId), $id(reCanvasId), 300);
         //返信する
-        replyTextBox.addEventListener('change', (function (currentText, currentList) {
+        replyTextBox.addEventListener('change', (function (currentText, currentList, uploadPictureObj) {
             return function () {
                 var threadId = currentText.id.substr(0, 8);
                 var newComment = {
@@ -400,12 +407,15 @@ var ContentThread = (function () {
                     'userId': ObChat.accInfo.id,
                     'profImg': ObChat.accInfo.img,
                     'content': currentText.value,
-                    'type': ObChat.DATA_TYPE.MESSAGE
+                    'type': ObChat.DATA_TYPE.MESSAGE,
+                    'imgData': uploadPictureObj.imageData
                 };
+                uploadPictureObj.clearPcture(null, 0);
+                uploadPictureObj.imageData = '';
                 ObChat.post(JSON.stringify(newComment));
                 currentText.value = '';
             };
-        })(replyTextBox, commentList));
+        })(replyTextBox, commentList, uploadPictureObj));
 
         this.__commentList = commentList;
         this.id = threadId;

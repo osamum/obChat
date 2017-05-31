@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+このファイルは、Web プロジェクトの発行 / パッケージ処理で使用されます。この MSBuild ファイルを編集すると、
+この処理の動作をカスタマイズできます。詳細については、https://go.microsoft.com/fwlink/?LinkID=208121 を参照してください。 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAV8QrO3J4QkGRVANKkr800wAAAAACAAAAAAADZgAAwAAAABAAAACLxQ/MYhcsggxNnj0helckAAAAAASAAACgAAAAEAAAAOj8aCGF8hqucDJyPfrEqOSAAAAA7B88eLIjIUx1tKh/oh9G7Yvc8Giht4sTStFBcoBeQnBlkTOFeCgU0zjEHXNmtbHe6zfV4e6KP4vyxQqJggfkNpgdxpZJkHnWBoNSl73+ZipSO607jeZv4kDxw42E1qey3RyAaLPXrepz6OEY7+y4HOLr/vak3uJLQYu4Pvi4SbcUAAAAE1lab0yO1bq9/vp/jhRyt9KoKnc=</EncryptedPassword>
+    <_NewBackgroundProfile>True</_NewBackgroundProfile>
+  </PropertyGroup>
+</Project>

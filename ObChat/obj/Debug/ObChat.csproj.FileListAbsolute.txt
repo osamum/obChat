@@ -1,0 +1,188 @@
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\csc.exe
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\csc.exe.config
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\csc.rsp
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\csi.exe
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\csi.rsp
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\System.AppContext.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\System.Collections.Immutable.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\System.IO.FileSystem.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\System.Reflection.Metadata.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\vbc.exe
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\vbc.exe.config
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\vbc.rsp
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\VBCSCompiler.exe
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\roslyn\VBCSCompiler.exe.config
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Fakebook.dll.config
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Fakebook.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Fakebook.pdb
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Microsoft.Owin.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Microsoft.Owin.Security.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Newtonsoft.Json.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Owin.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Microsoft.Owin.xml
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Microsoft.Owin.Security.xml
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\bin\Newtonsoft.Json.xml
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\obj\Debug\ObChat.csprojResolveAssemblyReference.cache
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\obj\Debug\Fakebook.dll
+D:\MyDefaults\Documents\Visual Studio 2017\Projects\ObChat\ObChat\obj\Debug\Fakebook.pdb
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\csc.exe
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\csc.exe.config
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\csc.rsp
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\csi.exe
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\csi.rsp
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\System.AppContext.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\vbc.exe
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\vbc.exe.config
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\vbc.rsp
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\VBCSCompiler.exe
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Fakebook.dll.config
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Fakebook.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Fakebook.pdb
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Microsoft.Owin.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Microsoft.Owin.Security.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Newtonsoft.Json.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Owin.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Microsoft.Owin.xml
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Microsoft.Owin.Security.xml
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\bin\Newtonsoft.Json.xml
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\obj\Debug\ObChat.csprojResolveAssemblyReference.cache
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\obj\Debug\Fakebook.dll
+C:\Users\osamum\Documents\job\セミナー\decode\2017\ObChat\ObChat\obj\Debug\Fakebook.pdb
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\csc.exe
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\csc.exe.config
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\csc.rsp
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\csi.exe
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\csi.rsp
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\System.AppContext.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\vbc.exe
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\vbc.exe.config
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\vbc.rsp
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\VBCSCompiler.exe
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Fakebook.dll.config
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Fakebook.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Fakebook.pdb
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Microsoft.Owin.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Microsoft.Owin.Security.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Newtonsoft.Json.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Owin.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Microsoft.Owin.xml
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Microsoft.Owin.Security.xml
+C:\Users\osamum\Source\Repos\obChat\ObChat\bin\Newtonsoft.Json.xml
+C:\Users\osamum\Source\Repos\obChat\ObChat\obj\Debug\ObChat.csprojResolveAssemblyReference.cache
+C:\Users\osamum\Source\Repos\obChat\ObChat\obj\Debug\Fakebook.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\obj\Debug\Fakebook.pdb
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\csc.exe
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\csc.exe.config
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\csc.rsp
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\csi.exe
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\csi.rsp
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\System.AppContext.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\vbc.exe
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\vbc.exe.config
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\vbc.rsp
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\VBCSCompiler.exe
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Fakebook.dll.config
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Fakebook.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Fakebook.pdb
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Microsoft.Owin.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Microsoft.Owin.Security.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Newtonsoft.Json.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Owin.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Microsoft.Owin.xml
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Microsoft.Owin.Security.xml
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\bin\Newtonsoft.Json.xml
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\obj\Debug\ObChat.csprojResolveAssemblyReference.cache
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\obj\Debug\Fakebook.dll
+C:\Users\osamum\Source\Repos\obChat\ObChat\ObChat\obj\Debug\Fakebook.pdb

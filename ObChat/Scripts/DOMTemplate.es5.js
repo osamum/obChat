@@ -33,6 +33,8 @@ var DOMTemplate = (function () {
             for (var attr in dataOpt) {
                 if (attr === 'innerText') {
                     element.innerText = dataSource[dataOpt[attr]];
+                } else if (attr === 'innerHTML') {
+                    element.innerHTML = dataSource[dataOpt[attr]];
                 } else if (attr === 'value') {
                     element.value = dataSource[dataOpt[attr]];
                 } else {

@@ -38,6 +38,22 @@ var appHelper = (function () {
             }
             return uuid;
         }
+    }, {
+        key: 'autoLink',
+        value: function autoLink(str) {
+            var regexp_url = /((h?)(ttps?:\/\/[a-zA-Z0-9.\-_@:/~?%&;=+#',()*!]+))/g; // ']))/;
+            var regexp_makeLink = function regexp_makeLink(all, url, h, href) {
+                return '<a class="innerLink" href="h' + href + '" target="_blank">' + url + '</a>';
+            };
+            return str.replace(regexp_url, regexp_makeLink);
+        }
+    }, {
+        key: 'escapeHTML',
+        value: function escapeHTML(html) {
+            var elem = document.createElement('div');
+            elem.appendChild(document.createTextNode(html));
+            return elem.innerHTML;
+        }
     }]);
 
     return appHelper;
@@ -51,7 +67,7 @@ var uploadPicture = (function () {
      * @param {number} picSize 画像のサイズ
      */
 
-    function uploadPicture(fileCtrl, canvas, picSize) {
+    function uploadPicture(fileCtrl, canvas, picSize, callBack) {
         var _this = this;
 
         _classCallCheck(this, uploadPicture);
@@ -73,7 +89,12 @@ var uploadPicture = (function () {
             _this.fr.readAsDataURL(file);
             _this.fr.onload = function (evt) {
                 image.onload = function () {
-                    canvas.style.display = 'block';
+                    //canvas.style.display = 'block';
+
+                    if (callBack) {
+                        callBack();
+                    };
+
                     if (_this.image.width > picSize) {
                         var dstWidth = picSize;
                         var dstHeight = picSize / image.width * image.height;

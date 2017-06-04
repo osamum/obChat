@@ -30,7 +30,8 @@ var ObChat = (function () {
                 textArea: $id('message'),
                 statusMsg: $id('status'),
                 userImageList: $id('userImgList'),
-                container: $id('container')
+                container: $id('container'),
+                uploadPicArea: $id('upPicCanvas')
             };
 
             this.DATA_TYPE = {
@@ -80,6 +81,7 @@ var ObChat = (function () {
                         var _jsonString = JSON.stringify(newThread);
                         ObChat.post(_jsonString);
                     }
+                    ObChat.displayUploadArea(false);
                     ObChat.uploadPictureObj.clearPcture(null, 0);
                     ObChat.uploadPictureObj.imageData = '';
                     ObChat.ctrl.textArea.value = '';
@@ -95,8 +97,28 @@ var ObChat = (function () {
                 ObChat.post(jsonString);
                 ObChat.ctrl.textArea.focus();
             });
-            this.uploadPictureObj = new uploadPicture(this.ctrl.fileUpload, this.ctrl.canvas);
+            this.uploadPictureObj = new uploadPicture(this.ctrl.fileUpload, this.ctrl.canvas, 400, function () {
+                ObChat.displayUploadArea(true);
+            });
+
+            //画像添付時の閉じるボタンハンドラ
+            ObChat.ctrl.uploadPicArea.addEventListener('click', function () {
+                ObChat.displayUploadArea(false);
+                ObChat.uploadPictureObj.clearPcture(null, 0);
+                ObChat.uploadPictureObj.imageData = '';
+            });
+
             return this;
+        }
+
+        /**
+         * 画像添付の際の閉じるボタンの表示非表示の制御
+         * @param {boolean} shwFlg true:表示 | false:非表示
+         */
+    }, {
+        key: 'displayUploadArea',
+        value: function displayUploadArea(shwFlg) {
+            ObChat.ctrl.uploadPicArea.style.display = shwFlg ? 'block' : 'none';
         }
 
         /**
@@ -364,9 +386,11 @@ var ContentThread = (function () {
             likeId = threadId + EVAL.LIKE,
             loveId = threadId + EVAL.LOVE,
             fannyId = threadId + EVAL.FANNY,
-            sadId = threadId + EVAL.SAD;
-        //let fbLinks = mkSNSLink(messageInfo.userId);
-        //let fbLinksLoginUser = mkSNSLink(ObChat.accInfo.id);
+            sadId = threadId + EVAL.SAD,
+            reFileId = threadId + '_reFile',
+            reCanvasId = threadId + '_reCnvs',
+            reCanvasAreaId = threadId + '_reCnvsArea',
+            reCloseId = threadId + '_reCloseId';
         messageInfo.replysId = replysId;
         messageInfo.atclId = threadId + '_atcl';
         messageInfo.textId = textId;
@@ -379,6 +403,14 @@ var ContentThread = (function () {
         messageInfo.loveId = loveId;
         messageInfo.fannyId = fannyId;
         messageInfo.sadId = sadId;
+        var htmlContent = appHelper.escapeHTML(messageInfo.content);
+        messageInfo.content = appHelper.autoLink(htmlContent).replace(/\r?\n/g, '<br>');
+
+        messageInfo.reFileId = reFileId;
+        messageInfo.reCnvsId = reCanvasId;
+        messageInfo.reCanvasAreaId = reCanvasAreaId;
+        messageInfo.reCloseId = reCloseId;
+
         messageInfo.likeClick = 'javascript:ObChat.evalContent(\'' + threadId + '\',\'' + EVAL.LIKE + '\')';
         messageInfo.loveClick = 'javascript:ObChat.evalContent(\'' + threadId + '\',\'' + EVAL.LOVE + '\')';
         messageInfo.fannyClick = 'javascript:ObChat.evalContent(\'' + threadId + '\',\'' + EVAL.FANNY + '\')';
@@ -388,9 +420,12 @@ var ContentThread = (function () {
         DOMTemplate.bindTemplate(parent, messageInfo, DOMTemplate.oderBy.DESC);
 
         var replyTextBox = $id(textId),
-            commentList = $id(replysId);
+            commentList = $id(replysId),
+            uploadPictureObj = new uploadPicture($id(reFileId), $id(reCanvasId), 300, function () {
+            $id(reCanvasAreaId).style.display = 'block';
+        });
         //返信する
-        replyTextBox.addEventListener('change', (function (currentText, currentList) {
+        replyTextBox.addEventListener('change', (function (currentText, currentList, uploadPictureObj) {
             return function () {
                 var threadId = currentText.id.substr(0, 8);
                 var newComment = {
@@ -400,12 +435,24 @@ var ContentThread = (function () {
                     'userId': ObChat.accInfo.id,
                     'profImg': ObChat.accInfo.img,
                     'content': currentText.value,
-                    'type': ObChat.DATA_TYPE.MESSAGE
+                    'type': ObChat.DATA_TYPE.MESSAGE,
+                    'imgData': uploadPictureObj.imageData
                 };
+                $id(threadId + '_reCnvsArea').style.display = 'none';
+                uploadPictureObj.clearPcture(null, 0);
+                uploadPictureObj.imageData = '';
                 ObChat.post(JSON.stringify(newComment));
                 currentText.value = '';
             };
-        })(replyTextBox, commentList));
+        })(replyTextBox, commentList, uploadPictureObj));
+
+        $id(reCloseId).addEventListener('click', (function (threadId, uploadPictureObj) {
+            return function () {
+                $id(threadId + '_reCnvsArea').style.display = 'none';
+                uploadPictureObj.clearPcture(null, 0);
+                uploadPictureObj.imageData = '';
+            };
+        })(threadId, uploadPictureObj));
 
         this.__commentList = commentList;
         this.id = threadId;
@@ -432,11 +479,15 @@ var ContentThread = (function () {
             fbUrl: string, imgUrl: string, dateTime: string, userId: string,
             userName: string, content: string, imgData: string, type: string}} */
         messageInfo) {
-            //let fbLinks = mkSNSLink(messageInfo.userId),
+
             var commentList = this.__commentList;
             messageInfo.fbUrl = '@'; //fbLinks.fbUrl;
             messageInfo.imgUrl = messageInfo.profImg; //fbLinks.imgUrl;
             messageInfo.dateTime = appHelper.getCrrentDatetime();
+
+            var htmlContent = appHelper.escapeHTML(messageInfo.content);
+            messageInfo.content = appHelper.autoLink(htmlContent).replace(/\r?\n/g, '<br>');
+
             //データをバインドする
             DOMTemplate.bindTemplate(commentList, messageInfo);
             if (ObChat.accInfo.name !== messageInfo.userName) {

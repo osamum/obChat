@@ -23,6 +23,20 @@ class appHelper {
         }
         return uuid;
     }
+
+    static autoLink(str) {
+            let regexp_url = /((h?)(ttps?:\/\/[a-zA-Z0-9.\-_@:/~?%&;=+#',()*!]+))/g; // ']))/;
+            let regexp_makeLink = (all, url, h, href)=>{
+                    return '<a class="innerLink" href="h' + href + '" target="_blank">' + url + '</a>';
+            }
+            return str.replace(regexp_url, regexp_makeLink);
+    }
+
+    static escapeHTML(html) {
+      let elem = document.createElement('div');
+      elem.appendChild(document.createTextNode(html));
+      return elem.innerHTML;
+}
 }
 
 
@@ -31,8 +45,9 @@ class uploadPicture {
      * uploadPicture クラスのコンストラクタ
      * @param {HTMLElement} fileCtrl input type='file' のエレメント
      * @param {HTMLElement} canvas canvas
+     * @param {number} picSize 画像のサイズ
      */
-    constructor(fileCtrl, canvas) {
+    constructor(fileCtrl, canvas, picSize, callBack) {
         this.ctx = canvas.getContext('2d');
         this.canvas = canvas;
         this.image = new Image();
@@ -50,9 +65,13 @@ class uploadPicture {
             this.fr.readAsDataURL(file);
             this.fr.onload = (evt) => {
                 image.onload = () => {
-                    if (this.image.width > 400) {
-                        let dstWidth = 400;
-                        let dstHeight = 400 / image.width * image.height;
+                    //canvas.style.display = 'block';
+
+                    if (callBack) { callBack() };
+
+                    if (this.image.width > picSize) {
+                        let dstWidth = picSize;
+                        let dstHeight = picSize / image.width * image.height;
                         canvas.width = dstWidth;
                         canvas.height = dstHeight;
                         ctx.drawImage(image, 0, 0, image.width, image.height, 0, 0, dstWidth, dstHeight);
@@ -71,10 +90,10 @@ class uploadPicture {
     }
 
     /**
-     * uploadPicture クラスが使用した Canvas の指定範囲をクリアする
-     * @param {number} afterWidth 消去する範囲の幅
-     * @param {number} afterHeight 消去する範囲の高さ
-     */
+    * uploadPicture クラスが使用した Canvas の指定範囲をクリアする
+    * @param {number} afterWidth 消去する範囲の幅
+    * @param {number} afterHeight 消去する範囲の高さ
+    */
     clearPcture(afterWidth, afterHeight) {
         let ctx = this.ctx,
             canvas = this.canvas;

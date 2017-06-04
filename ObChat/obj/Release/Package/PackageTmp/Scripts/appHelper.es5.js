@@ -38,6 +38,22 @@ var appHelper = (function () {
             }
             return uuid;
         }
+    }, {
+        key: 'autoLink',
+        value: function autoLink(str) {
+            var regexp_url = /((h?)(ttps?:\/\/[a-zA-Z0-9.\-_@:/~?%&;=+#',()*!]+))/g; // ']))/;
+            var regexp_makeLink = function regexp_makeLink(all, url, h, href) {
+                return '<a class="innerLink" href="h' + href + '" target="_blank">' + url + '</a>';
+            };
+            return str.replace(regexp_url, regexp_makeLink);
+        }
+    }, {
+        key: 'escapeHTML',
+        value: function escapeHTML(html) {
+            var elem = document.createElement('div');
+            elem.appendChild(document.createTextNode(html));
+            return elem.innerHTML;
+        }
     }]);
 
     return appHelper;
@@ -48,9 +64,10 @@ var uploadPicture = (function () {
      * uploadPicture クラスのコンストラクタ
      * @param {HTMLElement} fileCtrl input type='file' のエレメント
      * @param {HTMLElement} canvas canvas
+     * @param {number} picSize 画像のサイズ
      */
 
-    function uploadPicture(fileCtrl, canvas) {
+    function uploadPicture(fileCtrl, canvas, picSize, callBack) {
         var _this = this;
 
         _classCallCheck(this, uploadPicture);
@@ -72,9 +89,15 @@ var uploadPicture = (function () {
             _this.fr.readAsDataURL(file);
             _this.fr.onload = function (evt) {
                 image.onload = function () {
-                    if (_this.image.width > 400) {
-                        var dstWidth = 400;
-                        var dstHeight = 400 / image.width * image.height;
+                    //canvas.style.display = 'block';
+
+                    if (callBack) {
+                        callBack();
+                    };
+
+                    if (_this.image.width > picSize) {
+                        var dstWidth = picSize;
+                        var dstHeight = picSize / image.width * image.height;
                         canvas.width = dstWidth;
                         canvas.height = dstHeight;
                         ctx.drawImage(image, 0, 0, image.width, image.height, 0, 0, dstWidth, dstHeight);
@@ -93,10 +116,10 @@ var uploadPicture = (function () {
     }
 
     /**
-     * uploadPicture クラスが使用した Canvas の指定範囲をクリアする
-     * @param {number} afterWidth 消去する範囲の幅
-     * @param {number} afterHeight 消去する範囲の高さ
-     */
+    * uploadPicture クラスが使用した Canvas の指定範囲をクリアする
+    * @param {number} afterWidth 消去する範囲の幅
+    * @param {number} afterHeight 消去する範囲の高さ
+    */
 
     _createClass(uploadPicture, [{
         key: 'clearPcture',

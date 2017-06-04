@@ -23,7 +23,7 @@
                     </div>
                 </div>
                <div class="line-break_div"></div>
-                <div data-app-option="{id:'atclId',innerText:'content'}" style="margin:2px;"></div>
+                <div data-app-option="{id:'atclId',innerHTML:'content'}" style="margin:2px;"></div>
                 <img data-app-option="{src:'imgData'}">
                 <div class="like-frame">
                     <a title="いいね!" class="like_anchor" data-app-option="{href:'likeClick'}">👍</a>
@@ -43,7 +43,15 @@
                     <div class="fl">
                         <input class="replay-post_input" type="text" id="_text" value="" data-app-option="{id:'textId'}" />
                     </div>
-                    <div class="line-break_div"></div>
+                    <div style="float:left;">
+                        <div class="uploadButton">
+                            <div style="font-size:18px;">🖼</div>
+                            <input type="file" title="クリックして画像を追加" data-app-option="{id:'reFileId'}">
+                        </div></div><div class="line-break_div"></div>
+                </div>
+                <div style="width:300px;margin: 0 auto; position: relative;display:none;" data-app-option="{id:'reCanvasAreaId'}">
+                <canvas width="300" style="width:300px;" data-app-option="{id:'reCnvsId'}" height="0"></canvas>
+                    <div class="close-button" data-app-option="{id:'reCloseId'}" title="画像の添付を取り消す">×</div>
                 </div>
             </div>
         </div>
@@ -55,7 +63,10 @@
             </a><br />
             <span class="dateTime_span" data-app-option="{innerText:'dateTime'}"></span>
             <br />
-            <span data-app-option="{innerText:'content'}" ></span>
+            <span data-app-option="{innerHTML:'content'}" ></span>
+            <div style="width:300px;margin:0 auto;">
+                <img data-app-option="{src:'imgData'}">
+            </div>
         </div>
 
         <!--■ User image .list-user-->
@@ -99,12 +110,6 @@
                     <div style="width:200px; margin:0 auto;margin-top:20px;">
                         <button id="loginButton" >入室</button>
                     </div>
-                    <!--デモサイト用-->
-                    <div style="font-size:12px;font-weight:normal">
-                        <p>このサイトは <a href="https://github.com/osamum/obChat" target="_blank">github.com/osamum/obChat</a>で公開されているアプリのデモです。</p>
-                        <p>新機能、更新については <a href="https://twitter.com/osamum_MS" target="_blank">@osamum_MS</a>をチェックしてください。</p>
-                    </div>
-                    
                 </div>
             </div>
 
@@ -121,25 +126,30 @@
             <div id="inputBox" style="display:none;">
                 <div id="post-bar">
                     <img id="penPic" src="images/pen.png" align="left" />
-                投稿を作成</div>
+                    投稿を作成
+                </div>
                 <div class="fl">
-                    <img id="profilePic" data-app-option="{src:'imgUrl',title:'userName'}"/>
+                    <img id="profilePic" data-app-option="{src:'imgUrl',title:'userName'}" />
                 </div>
                 <div style="float:left;margin-left:2px;">
                     <textarea id="message" disabled></textarea>
                 </div>
+                <div class="line-break_div"></div>
                 <div id="upPicCanvas">
                     <canvas id="imgCanvas" width="400" height="0"></canvas>
+                    <div class="close-button" title="画像の添付を取り消す">×</div>
                 </div>
+
                 <div class="line-break_div"></div>
                 <div class="content-UI-frame">
                     <div class="uploadButton">
                         <div id="imgAttachButton" style="font-size:25px;">🖼</div>
                         <input id="imgfile" type="file" title="クリックして画像を追加" accept="image/jpeg,image/png" disabled>
                     </div>
-                        <input id="sendmessage" type="button" value="投稿する" disabled />
-                    </div>
+                    <input id="sendmessage" type="button" value="投稿する" disabled />
+                </div>
             </div>
+
             <div id="container" data-template="template_thread"></div>
         </div>
     </div>
@@ -155,6 +165,7 @@
     <!--<script src="Scripts/DOMTemplate.js"></script>
     <script src="Scripts/appHelper.js"></script>
     <script src="Scripts/index.js"></script>-->
+
     <script src="Scripts/DOMTemplate.es5.js"></script>
     <script src="Scripts/appHelper.es5.js"></script>
     <script src="Scripts/index.es5.js"></script>

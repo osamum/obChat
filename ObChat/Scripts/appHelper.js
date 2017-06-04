@@ -23,6 +23,20 @@ class appHelper {
         }
         return uuid;
     }
+
+    static autoLink(str) {
+            let regexp_url = /((h?)(ttps?:\/\/[a-zA-Z0-9.\-_@:/~?%&;=+#',()*!]+))/g; // ']))/;
+            let regexp_makeLink = (all, url, h, href)=>{
+                    return '<a class="innerLink" href="h' + href + '" target="_blank">' + url + '</a>';
+            }
+            return str.replace(regexp_url, regexp_makeLink);
+    }
+
+    static escapeHTML(html) {
+      let elem = document.createElement('div');
+      elem.appendChild(document.createTextNode(html));
+      return elem.innerHTML;
+}
 }
 
 
@@ -33,7 +47,7 @@ class uploadPicture {
      * @param {HTMLElement} canvas canvas
      * @param {number} picSize 画像のサイズ
      */
-    constructor(fileCtrl, canvas, picSize) {
+    constructor(fileCtrl, canvas, picSize, callBack) {
         this.ctx = canvas.getContext('2d');
         this.canvas = canvas;
         this.image = new Image();
@@ -51,7 +65,10 @@ class uploadPicture {
             this.fr.readAsDataURL(file);
             this.fr.onload = (evt) => {
                 image.onload = () => {
-                    canvas.style.display = 'block';
+                    //canvas.style.display = 'block';
+
+                    if (callBack) { callBack() };
+
                     if (this.image.width > picSize) {
                         let dstWidth = picSize;
                         let dstHeight = picSize / image.width * image.height;

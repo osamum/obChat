@@ -1,1 +1,0 @@
-﻿///<binding BeforeBuild='Scripts/appHelper.js, Scripts/DOMTemplate.js, Scripts/index.js' />

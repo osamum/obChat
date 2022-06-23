@@ -1,23 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\osamum\\Documents\\Job\\Tech\\SignalR\\work\\obChatCore\\SignalRChat\\obChatCore.csproj": {}
+    "C:\\Users\\osamum\\source\\repos\\obChat\\SignalRChat\\obChatCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\osamum\\Documents\\Job\\Tech\\SignalR\\work\\obChatCore\\SignalRChat\\obChatCore.csproj": {
+    "C:\\Users\\osamum\\source\\repos\\obChat\\SignalRChat\\obChatCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\osamum\\Documents\\Job\\Tech\\SignalR\\work\\obChatCore\\SignalRChat\\obChatCore.csproj",
+        "projectUniqueName": "C:\\Users\\osamum\\source\\repos\\obChat\\SignalRChat\\obChatCore.csproj",
         "projectName": "obChatCore",
-        "projectPath": "C:\\Users\\osamum\\Documents\\Job\\Tech\\SignalR\\work\\obChatCore\\SignalRChat\\obChatCore.csproj",
+        "projectPath": "C:\\Users\\osamum\\source\\repos\\obChat\\SignalRChat\\obChatCore.csproj",
         "packagesPath": "C:\\Users\\osamum\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\osamum\\Documents\\Job\\Tech\\SignalR\\work\\obChatCore\\SignalRChat\\obj\\",
+        "outputPath": "C:\\Users\\osamum\\source\\repos\\obChat\\SignalRChat\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\osamum\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,6 +31,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -40,6 +43,13 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.2-beta1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
         }
       }
     }

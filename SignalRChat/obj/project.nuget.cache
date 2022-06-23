@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "dUXPsG9Gdv74nOMH7UOvic4CYATLxYTCH9UT3rxVergwUC5pDa2hokE7AZ7s0mL7Qq8DXKxi32cd6Qh3ymH08A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\osamum\\source\\repos\\obChat\\SignalRChat\\obChatCore.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\osamum\\.nuget\\packages\\newtonsoft.json\\13.0.2-beta1\\newtonsoft.json.13.0.2-beta1.nupkg.sha512"
+  ],
+  "logs": []
+}
